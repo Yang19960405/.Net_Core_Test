@@ -62,11 +62,12 @@ namespace CoreTest
             });
 
             #region 启动swagger中间件服务
-            app.UseSwagger();
 
+            app.UseSwagger();
             app.UseSwaggerUI(c=> {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
+
             #endregion
         }
     }
