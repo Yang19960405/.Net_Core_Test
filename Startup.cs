@@ -78,13 +78,6 @@ namespace CoreTest
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
-
             #region 启动swagger中间件服务
 
             app.UseSwagger();
@@ -102,14 +95,13 @@ namespace CoreTest
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseAuthorization();
 
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //            template: "{controller=Home}/{action=Index}/{id?}");
-            //});
             #endregion
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

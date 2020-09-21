@@ -44,7 +44,7 @@ namespace CoreTest.Controllers
             }
             else
             {
-                return BadRequest(new { message = "username or password is incorrect." });
+                return BadRequest(new { message = "username or password is incorrect."});
             }
         }
     }
